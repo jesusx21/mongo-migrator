@@ -28,5 +28,13 @@
     "node"
   ],
   "author": "Jesus Agustin Peña Meza",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jesusx21/mongo-migrator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jesusx21/mongo-migrator/issues"
+  },
+  "homepage": "https://github.com/jesusx21/mongo-migrator#readme"
 }

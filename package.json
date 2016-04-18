@@ -1,0 +1,32 @@
+{
+  "name": "mongo-migrator",
+  "version": "1.0.0",
+  "description": "Provides for the creation, management, and invocation of change management scripts for MongoDB",
+  "main": "/bin/migrate.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "app-module-path": "^1.0.6",
+    "async": "^2.0.0-rc.3",
+    "chai": "^3.5.0",
+    "eslint": "^2.8.0",
+    "lodash": "^4.11.1",
+    "mkdirp": "^0.5.1",
+    "mongodb": "^2.1.16",
+    "nomnom": "^1.8.1",
+    "sinon": "^1.17.3",
+    "sinon-chai": "^2.8.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": " mocha --watch --recursive test/index test/"
+  },
+  "keywords": [
+    "mongo",
+    "migrations",
+    "node"
+  ],
+  "author": "Jesus Agustin Peña Meza",
+  "license": "ISC"
+}

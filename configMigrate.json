@@ -1,0 +1,16 @@
+{
+  "migration": {
+    "directory": "migrations/",
+    "collection": "migrations"
+  },
+  "mongo": {
+    "database": "test",
+    "user": "mongo-user",
+    "password": "mongo-password",
+    "replicaSet": "replicaSet",
+    "servers": [{
+      "host": "localhost",
+      "port": 27017
+    }]
+  }
+}

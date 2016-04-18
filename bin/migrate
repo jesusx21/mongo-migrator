@@ -1,0 +1,30 @@
+#!/usr/bin/env node
+
+var program = require('nomnom');
+var migrate = require('../');
+
+// init command
+program
+  .command('init')
+  .callback(migrate.init)
+  .help('creates config file')
+
+// create command
+program
+  .command('create')
+  .callback(migrate.create)
+  .help('creates migration file')
+
+// upgrade command
+program
+  .command('upgrade')
+  .callback(migrate.upgrade)
+  .help('upgrade database with the script on migration file')
+
+// downgrade command
+program
+  .command('downgrade')
+  .callback(migrate.downgrade)
+  .help('make a rollback to database with the script on migration file')
+
+program.parse();

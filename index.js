@@ -41,7 +41,7 @@ const cleanArgs = function(args) {
   }
 
   if (args.migration.directory) {
-    args.migration.directory = `${__dirname}/${args.migration.directory}`;
+    args.migration.directory = `${args.migration.directory}`;
   }
 
   return args;
@@ -51,7 +51,7 @@ const _loadMigrator = function(callback) {
   let args = {};
 
   try {
-    args = require(`${__dirname}/configMigrate`);
+    args = require(`${process.cwd()}/configMigrate`);
     args = cleanArgs(args);
   } catch(error) {
     const message = `file configMigrate.js was not found`;
@@ -88,7 +88,7 @@ module.exports.init = function(options) {
     return done(new Error(message))
   }
 
-  let path = 'configMigrate.json';
+  let path = `${process.cwd()}/configMigrate.json`;
   fs.writeFile(path, bodyConfig, (error) => {
     if (error) return done(error);
 

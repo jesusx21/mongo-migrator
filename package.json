@@ -1,8 +1,11 @@
 {
   "name": "mongo-migrator",
-  "version": "1.0.0",
+  "version": "1.0.8",
   "description": "Provides for the creation, management, and invocation of change management scripts for MongoDB",
   "main": "/bin/migrate.js",
+  "bin": {
+    "migrate": "./bin/migrate"
+  },
   "directories": {
     "test": "test"
   },

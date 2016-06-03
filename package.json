@@ -1,6 +1,6 @@
 {
   "name": "mongo-migrator",
-  "version": "1.0.8",
+  "version": "1.1.0",
   "description": "Provides for the creation, management, and invocation of change management scripts for MongoDB",
   "main": "/bin/mograte",
   "bin": {

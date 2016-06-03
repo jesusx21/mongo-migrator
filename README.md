@@ -17,15 +17,15 @@
 ## Installation
 
 ```bash
-  npm install mongo-migrator
+$ npm install mongo-migrator -g
 ```
 
 ## Common Usage (CLI)
 
-The package installs a single CLI executable — `migrate`.
+The package installs a single CLI executable — `mograte`.
 
 When installing locally to your project this executable can be found at
-`./node_modules/.bin/migrate`.
+`./node_modules/.bin/mograte`.
 
 When installing globally the executable should
 automatically become accessible on your PATH.
@@ -33,9 +33,9 @@ automatically become accessible on your PATH.
 ### Configuration
 
 ```bash
-migrate init
+$ mograte init
 ```
-The CLI app will crate a file called configMigrate.json, this file has the default
+The CLI app will crate a file called configmigrate.json, this file has the default
 configuration
 
 ```json
@@ -78,7 +78,7 @@ already ran migrations,
 The app simplifies creating migration stubs by providing a command
 
 ```bash
-  migrate create 'migration name'
+$ mograte create 'migration name'
 ```
 
 This creates automatically numbered file `ddmmyyyyhhmmssms-migration-name.js`
@@ -89,7 +89,7 @@ The migration file must be a EcmaScript6 module exporting the
 following:
 
 * `id` — a string that's used to identify the migration
-(filled automatically when creating migrations through `migrate create`).
+(filled automatically when creating migrations through `mograte create`).
 * `upgrade`  — a function used for forward migration.
 * `downgrade` — a function used for backward migration.
 
@@ -149,7 +149,7 @@ Run all migrations from the `directory` (specified in
 For Upgrades
 
 ```bash
-migrate upgrade [null|id|name]
+$ mograte upgrade [null|id|name]
 ```
 
 Where
@@ -160,7 +160,7 @@ Where
 For downgrades
 
 ```bash
-migrate downgrade [null|id|name]
+$ mograte downgrade [null|id|name]
 ```
 
 Where
@@ -192,18 +192,18 @@ The library also supports programmatic usage.
 Start with `require`'ing it:
 
 ```javascript
-var migrate = require('mongo-migrator');
+var mograte = require('mongo-migrator');
 ```
 
 ### Using `Migrator`
 
-Next, you can use migrate as was described before:
+Next, you can use mograte as was described before:
 
 ```javascript
-migrade.init();
-migrate.create(name);
-migrate.upgrade(option);
-migrate.downgrade(option);
+mograte.init();
+mograte.create(name);
+mograte.upgrade(option);
+mograte.downgrade(option);
 ```
 
 For downgrade and upgrade you have to sent the option in an Array

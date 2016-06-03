@@ -14,9 +14,9 @@ const bodyConfig = `{
   },
   "mongo": {
     "database": "test",
-    "user": "mongo-user",
-    "password": "mongo-password",
-    "replicaSet": "replicaSet",
+    "user": "",
+    "password": "",
+    "replicaSet": "",
     "servers": [{
       "host": "localhost",
       "port": 27017
@@ -28,15 +28,15 @@ let migrator;
 let config;
 
 const cleanArgs = function(args) {
-  if (args.mongo.user === 'mongo-user') {
+  if (args.mongo.user) {
     delete args.mongo.user;
   }
 
-  if (args.mongo.password === 'mongo-password') {
+  if (args.mongo.password) {
     delete args.mongo.password;
   }
 
-  if (args.mongo.replicaSet === 'replicaSet') {
+  if (args.mongo.replicaSet) {
     delete args.mongo.replicaSet;
   }
 
@@ -84,7 +84,7 @@ const done = function(error, result) {
 
 module.exports.init = function(options) {
   if (options[1]) {
-    const message = 'command init does not have options';
+    const message = 'command init does not need options';
     return done(new Error(message))
   }
 
@@ -123,5 +123,3 @@ module.exports.downgrade = function(options) {
     migrator.downgrade(options[1], done);
   });
 }
-
-

@@ -28,15 +28,15 @@ let migrator;
 let config;
 
 const cleanArgs = function(args) {
-  if (args.mongo.user) {
+  if (!args.mongo.user) {
     delete args.mongo.user;
   }
 
-  if (args.mongo.password) {
+  if (!args.mongo.password) {
     delete args.mongo.password;
   }
 
-  if (args.mongo.replicaSet) {
+  if (!args.mongo.replicaSet) {
     delete args.mongo.replicaSet;
   }
 
